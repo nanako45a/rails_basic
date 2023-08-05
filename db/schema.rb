@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_27_002552) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_05_080138) do
   create_table "authentications", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "provider", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_002552) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "board_image"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
