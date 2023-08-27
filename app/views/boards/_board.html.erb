@@ -16,6 +16,14 @@
                 <i class="bi bi-trash-fill"></i>
               <% end %>
             </div>
+          <% else %>
+            <div class='ms-auto'>
+              <% if current_user.bookmark?(board) %>
+                <%= render 'unbookmark', { board: board } %>
+              <% else %>
+                <%= render 'bookmark', { board: board } %>
+              <% end %>
+            </div>
           <% end %>
         </div>
         <ul class="list-inline">

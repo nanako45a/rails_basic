@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_06_112644) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_27_115648) do
   create_table "authentications", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "provider", null: false
@@ -28,6 +28,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_06_112644) do
     t.datetime "updated_at", null: false
     t.string "board_image"
     t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "bookmarks", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "board_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_bookmarks_on_board_id"
+    t.index ["user_id", "board_id"], name: "index_bookmarks_on_user_id_and_board_id", unique: true
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "comments", charset: "utf8mb4", force: :cascade do |t|
@@ -60,4 +70,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_06_112644) do
   end
 
   add_foreign_key "boards", "users"
+  add_foreign_key "bookmarks", "boards"
+  add_foreign_key "bookmarks", "users"
 end
