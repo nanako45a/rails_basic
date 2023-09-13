@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_27_115648) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_134838) do
   create_table "authentications", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "provider", null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_115648) do
     t.integer "access_count_to_reset_password_page", default: 0
     t.string "first_name"
     t.string "last_name"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
