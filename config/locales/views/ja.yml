@@ -14,6 +14,8 @@ ja:
     edit: 編集
     delete_confirm: 削除しますか？
     password_reset: パスワードリセット
+    require_login: ログインしてください
+    not_authorized: 権限がありません
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
@@ -77,4 +79,17 @@ ja:
     create:
       success: パスワードリセット手順を送信しました
     update:
-      success: パスワードを変更しました    
+      success: パスワードを変更しました   
+  admin:
+    user_sessions:
+      new:
+        title: ログイン
+        login: ログイン
+      create:
+        success: ログインしました
+        failure: ログインに失敗しました
+      destroy:
+        success: ログアウトしました
+    dashboards:
+      index:
+        title: ダッシュボード 
