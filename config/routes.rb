@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     post 'login' => "user_sessions#create"
     delete 'logout' => 'user_sessions#destroy', :as => :logout
   end
-
+  
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
